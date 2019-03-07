@@ -1,0 +1,8 @@
+rootProject.name = 'small-educator'
+include 'teacher-data'
+include 'teacher-contract'
+include 'student-data'
+include 'student-contract'
+include 'mentor-data'
+include 'mentor-contract'
+
