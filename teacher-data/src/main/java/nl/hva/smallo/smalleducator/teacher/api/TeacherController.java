@@ -5,6 +5,7 @@ import nl.hva.smallo.smalleducator.teacher.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
@@ -14,6 +15,11 @@ public class TeacherController {
 
     @Autowired
     private TeacherRepository teacherRepository;
+
+    @PostMapping
+    public Teacher registerTeacher() {
+        return teacherRepository.save(new Teacher());
+    }
 
     @GetMapping
     public Iterable<Teacher> getTeachers() {
