@@ -17,10 +17,6 @@ public class Teacher {
     @Type(type = "uuid-char")
     private UUID id;
 
-    public Teacher() {
-
-    }
-
     public UUID getId() {
         return id;
     }

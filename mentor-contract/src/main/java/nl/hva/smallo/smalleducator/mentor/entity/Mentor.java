@@ -17,10 +17,6 @@ public class Mentor {
     @Type(type = "uuid-char")
     private UUID id;
 
-    public Mentor() {
-
-    }
-
     public UUID getId() {
         return id;
     }
