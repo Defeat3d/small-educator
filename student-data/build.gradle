@@ -6,6 +6,7 @@ repositories {
 }
 
 dependencies {
+    compile project(":student-contract")
     compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
     compile("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
     compile("mysql:mysql-connector-java:$mySqlConnectorVersion")
