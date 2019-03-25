@@ -1,17 +1,17 @@
-package nl.hva.smallo.smalleducator.student.entity;
+package nl.hva.smallo.smalleducator.course.entity;
 
-import nl.hva.smallo.smalleducator.course.entity.CourseCode;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.Set;
 import java.util.UUID;
 
 @Entity
-public class Student {
+public class Course {
 
     @Id
     @GeneratedValue(generator = "UUID")
@@ -19,14 +19,22 @@ public class Student {
     @Type(type = "uuid-char")
     private UUID id;
 
-    private Set<CourseCode> courseCodes;
+    @OneToMany
+    private Set<Lesson> lessons;
+
+    @OneToMany
+    private Set<CourseCode> codes;
 
     public UUID getId() {
         return id;
     }
 
-    public Set<CourseCode> getCourseCodes() {
-        return courseCodes;
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public Set<CourseCode> getCodes() {
+        return codes;
     }
 
 }

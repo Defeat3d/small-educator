@@ -3,6 +3,6 @@ repositories {
 }
 
 dependencies {
-    compile project(":course-contract")
+    compile project(":student-contract")
     compile("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
 }
