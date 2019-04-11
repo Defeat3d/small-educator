@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="VBox" alignment="TOP_CENTER" fillWidth="false" maxHeight="-Infinity"
+         maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" xmlns="http://javafx.com/javafx/8.0.172-ea">
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+    </padding>
+    <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-color: black;">
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <Label alignment="TOP_CENTER" text="SMALL EDUCATOR" HBox.hgrow="ALWAYS">
+            <font>
+                <Font name="System Bold" size="22.0"/>
+            </font>
+            <graphic>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <viewport>
+                        <Rectangle2D/>
+                    </viewport>
+                    <Image url="@../images/neetbok.png"/>
+                </ImageView>
+            </graphic>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Label>
+        <Label fx:id="nameField" text="Koen">
+            <HBox.margin>
+                <Insets left="300.0"/>
+            </HBox.margin>
+        </Label>
+        <Button mnemonicParsing="false" onAction="#logout" text="Sign out">
+            <HBox.margin>
+                <Insets right="5.0"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+    <HBox alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+        <VBox fx:id="courseBox" prefWidth="160.0" spacing="5.0" style="-fx-border-color: black;">
+            <HBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </HBox.margin>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </VBox>
+        <VBox alignment="CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </HBox.margin>
+            <MediaView fx:id="mediaView" fitHeight="300.0" fitWidth="500.0"/>
+            <TextArea fx:id="contextArea" editable="false" style="-fx-border-color: black;" wrapText="true"
+                      VBox.vgrow="ALWAYS"/>
+        </VBox>
+        <VBox spacing="5.0">
+            <HBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </HBox.margin>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefWidth="160.0"
+                        style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+                <VBox fx:id="chatBox" spacing="5.0"/>
+            </ScrollPane>
+            <TextField fx:id="chatField" promptText="Enter message.." style="-fx-border-color: black;"
+                       VBox.vgrow="NEVER"/>
+        </VBox>
+    </HBox>
+</fx:root>

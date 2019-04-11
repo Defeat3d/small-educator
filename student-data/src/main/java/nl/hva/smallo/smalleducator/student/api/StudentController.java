@@ -31,4 +31,9 @@ public class StudentController {
         return studentRepository.findById(UUID.fromString(id)).orElse(null);
     }
 
+    @GetMapping(path = {"/login/{email}/{password}"})
+    public Student login(@PathVariable String email, @PathVariable String password) {
+        return studentRepository.findByEmailAndPassword(email, password).orElse(null);
+    }
+
 }

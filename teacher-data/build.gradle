@@ -10,4 +10,5 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
     compile("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
     compile("mysql:mysql-connector-java:$mySqlConnectorVersion")
+    compile("com.h2database:h2:$h2Version")
 }

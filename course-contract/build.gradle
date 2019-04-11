@@ -1,8 +1,0 @@
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    compile project(":student-contract")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
-}

@@ -1,4 +1,4 @@
-package nl.hva.smallo.smalleducator.course.entity;
+package nl.hva.smallo.smalleducator.student.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
@@ -15,18 +15,15 @@ public class Lesson {
     @Type(type = "uuid-char")
     private UUID id;
 
-    @ManyToOne
-    private Course course;
-
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     private Chat chat;
+
+    public Lesson() {
+        this.chat = new Chat();
+    }
 
     public UUID getId() {
         return id;
-    }
-
-    public Course getCourse() {
-        return course;
     }
 
     public Chat getChat() {
